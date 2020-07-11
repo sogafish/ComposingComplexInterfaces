@@ -13,9 +13,9 @@ struct HikeView: View {
     
     var transition: AnyTransition {
         let insertion = AnyTransition.move(edge: .trailing)
-            .combined(with: .opacity)
-        let removal = AnyTransition.scale
-            .combined(with: .opacity)
+            .combined(with: .scale)
+        let removal = AnyTransition.move(edge: .leading)
+            .combined(with: .scale)
         return .asymmetric(insertion: insertion, removal: removal)
     }
     
